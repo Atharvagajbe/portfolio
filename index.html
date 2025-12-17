@@ -5,563 +5,294 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Atharva Devendra Gajbe — Cybersecurity & Blockchain Portfolio" />
   <title>Atharva Devendra Gajbe — Portfolio</title>
-
-  <style>
-    :root{
-      --bg:#0b0f19;
-      --panel:#121a2b;
-      --text:#e8eefc;
-      --muted:#b7c3e0;
-      --brand:#7c5cff;
-      --brand2:#22c55e;
-      --border:rgba(255,255,255,.10);
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:18px;
-      --max:1120px;
-      --pad:22px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    }
-    [data-theme="light"]{
-      --bg:#f7f8fc;
-      --panel:#ffffff;
-      --text:#111827;
-      --muted:#4b5563;
-      --brand:#5b5cff;
-      --brand2:#16a34a;
-      --border:rgba(17,24,39,.12);
-      --shadow:0 10px 30px rgba(17,24,39,.10);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:var(--font);
-      background: radial-gradient(1200px 700px at 20% 0%, rgba(124,92,255,.25), transparent 60%),
-                  radial-gradient(900px 600px at 85% 10%, rgba(34,197,94,.18), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
-    a{color:inherit; text-decoration:none}
-    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .nav{
-      position:sticky; top:0; z-index:50;
-      background: color-mix(in srgb, var(--bg) 85%, transparent);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--border);
-    }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:12px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;
-    }
-    .logo{
-      width:36px; height:36px; border-radius:12px;
-      background: linear-gradient(135deg, var(--brand), color-mix(in srgb, var(--brand2) 65%, var(--brand)));
-      box-shadow: var(--shadow);
-    }
-    .nav-links{display:flex; gap:14px; align-items:center}
-    .nav-links a{
-      padding:8px 10px; border-radius:12px; color:var(--muted);
-    }
-    .nav-links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-    [data-theme="light"] .nav-links a:hover{background:rgba(17,24,39,.06)}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px; border-radius:14px;
-      border:1px solid var(--border);
-      background: color-mix(in srgb, var(--panel) 75%, transparent);
-      color:var(--text);
-      cursor:pointer;
-      transition: transform .08s ease, background .2s ease;
-      user-select:none;
-      gap:10px;
-      font-weight:600;
-    }
-    .btn:hover{background: color-mix(in srgb, var(--panel) 88%, transparent)}
-    .btn:active{transform: translateY(1px)}
-    .btn-primary{
-      border-color: color-mix(in srgb, var(--brand) 55%, var(--border));
-      background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 85%, transparent), rgba(34,197,94,.18));
-    }
-
-    .hero{padding:64px 0 18px}
-    .grid-hero{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:24px;
-      align-items:stretch;
-    }
-    .card{
-      background: color-mix(in srgb, var(--panel) 92%, transparent);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .card-pad{padding: var(--pad)}
-    h1{
-      margin:0 0 10px;
-      font-size: clamp(34px, 4vw, 56px);
-      line-height:1.05;
-      letter-spacing:-.8px;
-    }
-    .subtitle{color:var(--muted); font-size: clamp(15px, 1.6vw, 18px)}
-    .pill-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
-    .pill{
-      border:1px solid var(--border);
-      padding:7px 10px;
-      border-radius:999px;
-      color:var(--muted);
-      background: rgba(255,255,255,.03);
-      font-size:13px;
-    }
-    [data-theme="light"] .pill{background: rgba(17,24,39,.03)}
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
-    .hero-right{
-      display:flex; flex-direction:column; gap:12px;
-    }
-    .stat{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
-      padding:16px 16px;
-    }
-    .stat b{font-size:22px}
-    .stat span{color:var(--muted); font-size:13px}
-
-    section{padding:22px 0}
-    .section-title{
-      display:flex; align-items:end; justify-content:space-between; gap:18px;
-      margin: 10px 0 14px;
-    }
-    .section-title h2{margin:0; font-size:22px}
-    .section-title p{margin:0; color:var(--muted); font-size:14px}
-
-    .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
-    .grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
-    .item{
-      padding:16px;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.03);
-    }
-    [data-theme="light"] .item{background: rgba(17,24,39,.03)}
-    .item h3{margin:0 0 6px; font-size:16px}
-    .item p{margin:0; color:var(--muted); font-size:14px}
-    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .tag{font-size:12px; color:var(--muted); border:1px solid var(--border); padding:5px 8px; border-radius:999px}
-
-    .project{display:flex; flex-direction:column; gap:10px}
-    .project-top{display:flex; align-items:flex-start; justify-content:space-between; gap:12px}
-    .links{display:flex; gap:8px; flex-wrap:wrap}
-    .links a{font-size:13px; color:var(--muted); border:1px solid var(--border); padding:6px 8px; border-radius:10px}
-    .links a:hover{color:var(--text); background:rgba(255,255,255,.05)}
-    [data-theme="light"] .links a:hover{background:rgba(17,24,39,.05)}
-
-    .timeline{display:flex; flex-direction:column; gap:12px}
-    .role{padding:16px}
-    .role-head{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
-    .role-head b{font-size:15px}
-    .role-head span{color:var(--muted); font-size:13px}
-
-    .contact{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    .contact a.big{
-      display:flex; flex-direction:column; gap:6px;
-      padding:18px;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.03);
-    }
-    [data-theme="light"] .contact a.big{background: rgba(17,24,39,.03)}
-    .contact a.big span{color:var(--muted); font-size:13px}
-
-    footer{
-      padding:30px 0 46px;
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    @media (max-width: 920px){
-      .grid-hero{grid-template-columns: 1fr}
-      .grid-3{grid-template-columns: 1fr}
-      .grid-2{grid-template-columns: 1fr}
-      .contact{grid-template-columns:1fr}
-      .nav-links{display:none}
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 
+<a href="#top" class="btn backTop" aria-label="Back to top">↑</a>
+
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Home">
-        <div class="logo"></div>
-        <div>
-          <div style="font-size:14px">Atharva Gajbe</div>
-          <div style="font-size:12px;color:var(--muted)">Cybersecurity • Blockchain</div>
+<div id="top"></div>
+<header id="top">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Home">
+      <div class="logo"></div>
+      <div>
+        <div style="font-size:14px">Atharva Gajbe</div>
+        <div style="font-size:12px;color:var(--muted)">Cybersecurity • Blockchain</div>
+      </div>
+    </a>
+
+    <button class="navToggle" aria-label="Menu" aria-expanded="false" type="button">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links" data-nav-links aria-label="Primary">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="reveal">
+    <div class="grid-hero">
+      <div class="card">
+        <h1>Hi, I’m <span style="color:var(--brand)">Atharva</span>.</h1>
+        <p class="subtitle">
+          Cybersecurity & blockchain-focused engineer working on malware detection,
+          secure systems, and real-world threat mitigation.
+        </p>
+
+        <div class="pill-row">
+          <span class="pill">📍 Heidelberg, Germany</span>
+          <span class="pill">🛡️ VAPT & Reverse Engineering</span>
+          <span class="pill">⛓️ Blockchain Security</span>
         </div>
-      </a>
 
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
+        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn" href="mailto:gajbeatharva2000@gmail.com">Email</a>
+          <a class="btn" href="./Atharva_resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+        </div>
+      </div>
 
-      <div style="display:flex; gap:10px; align-items:center">
-        <button class="btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
-        <a class="btn btn-primary" href="#contact">Let’s talk</a>
+      <div class="card hero-image">
+        <!-- Put your image at: assets/decepticon.png -->
+        <img src="assets/image.jpg" alt="Cybersecurity emblem" loading="lazy" />
       </div>
     </div>
-  </header>
+  </section>
 
-  <main id="top" class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="grid-hero">
-        <div class="card card-pad">
-          <h1>Hi, I’m <span style="color:var(--brand)">Atharva</span>.</h1>
-          <p class="subtitle">
-            I’m a Computer Science professional focused on <b>cybersecurity</b>, <b>secure systems</b>, and <b>blockchain</b>.
-            I’ve worked on malware detection for mobile apps, vulnerability assessment, and building secure, tamper-resistant solutions.
-          </p>
+  <!-- PROJECTS -->
+  <section id="projects" class="reveal">
+    <div class="section-title">
+      <h2>Projects</h2>
+      <p>Security, blockchain & research work</p>
+    </div>
 
-          <div class="pill-row">
-            <span class="pill">📍 Heidelberg, Germany</span>
-            <span class="pill">🎓 M.Sc. Applied Computer Science (2025–Present)</span>
-            <span class="pill">🛡️ VAPT • Reverse Engineering • Cloud Security</span>
-            <span class="pill">⛓️ Ethereum • Smart Contracts</span>
-          </div>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View projects</a>
-            <a class="btn" href="mailto:gajbeatharva2000@gmail.com">Email me</a>
-            <a class="btn" href="./Atharva_resume.pdf" target="_blank" rel="noreferrer">Download résumé</a>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="card stat">
-            <div>
-              <b>3+</b><br/>
-              <span>Years in security roles</span>
-            </div>
-            <div aria-hidden="true" style="opacity:.9">🔍</div>
-          </div>
-          <div class="card stat">
-            <div>
-              <b>500+</b><br/>
-              <span>Team size in Google Play Protect ops</span>
-            </div>
-            <div aria-hidden="true" style="opacity:.9">🧩</div>
-          </div>
-          <div class="card stat">
-            <div>
-              <b>Research</b><br/>
-              <span>Blockchain + extension security</span>
-            </div>
-            <div aria-hidden="true" style="opacity:.9">📄</div>
-          </div>
+    <div class="grid-2">
+      <div class="item">
+        <h3>Blockchain-Based Exam Paper Transmission</h3>
+        <p>Secure, tamper-resistant exam paper distribution using encryption + blockchain validation.</p>
+        <div class="tags">
+          <span class="tag">Blockchain</span><span class="tag">Encryption</span><span class="tag">Integrity</span>
         </div>
       </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-title">
-        <h2>About</h2>
-        <p>Security-minded builder with blockchain + app defense experience.</p>
+      <div class="item">
+        <h3>Malware Detection — Google Play Protect</h3>
+        <p>Analyzed mobile applications to detect malicious behavior; supported remediation and secure coding practices.</p>
+        <div class="tags">
+          <span class="tag">Android Security</span><span class="tag">Reverse Engineering</span><span class="tag">FRIDA</span>
+        </div>
       </div>
 
-      <div class="card card-pad">
-        <p style="margin:0;color:var(--muted);font-size:15px">
-          I’m Atharva Devendra Gajbe — a detail-oriented Computer Science professional with hands-on experience in
-          blockchain technology, cybersecurity, and secure systems development. I’ve designed and implemented
-          blockchain-based solutions for data integrity and confidentiality, and I’ve worked on malware detection and
-          reverse engineering of mobile applications. I enjoy solving real-world security challenges with a practical,
-          collaborative approach, and I’m currently pursuing a Master’s in Applied Computer Science at SRH University Heidelberg.
+      <div class="item">
+        <h3>Server-Side Template Injection (SSTI) Research</h3>
+        <p>Demonstrated SSTI risk and impact in controlled labs; focused on detection and prevention.</p>
+        <div class="tags">
+          <span class="tag">Web Security</span><span class="tag">OWASP</span><span class="tag">Secure Coding</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <h3>Scanner-Master</h3>
+        <p>Network scanner that identifies connected devices and displays IP/MAC information.</p>
+        <div class="tags">
+          <span class="tag">Networking</span><span class="tag">Discovery</span><span class="tag">Python</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <h3>Android APK Reverse Engineering Lab</h3>
+        <p>Static & dynamic analysis of APKs to uncover suspicious behaviors and insecure patterns (lab/ethical use).</p>
+        <div class="tags">
+          <span class="tag">APK</span><span class="tag">Objection</span><span class="tag">FRIDA</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <h3>Cloud VAPT for Banking Infrastructure</h3>
+        <p>Reconnaissance, scanning, and penetration testing for cloud-hosted systems with remediation reporting.</p>
+        <div class="tags">
+          <span class="tag">Cloud Security</span><span class="tag">VAPT</span><span class="tag">Reporting</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <h3>Security Automation Scripts</h3>
+        <p>Automation for scanning, data collection, and structured reporting to speed up assessments.</p>
+        <div class="tags">
+          <span class="tag">Automation</span><span class="tag">Python</span><span class="tag">Tooling</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <h3>Blockchain Integrity Proof Demo</h3>
+        <p>Proof-of-concept for tamper-evident verification of records using smart contracts.</p>
+        <div class="tags">
+          <span class="tag">Smart Contracts</span><span class="tag">Integrity</span><span class="tag">Ethereum</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="reveal">
+    <div class="section-title">
+      <h2>Experience</h2>
+      <p>Industry & leadership roles</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="item">
+        <h3>Security Analyst — Cognizant (Google Play Protect)</h3>
+        <p>
+          • Identified and helped eliminate malware in Android/iOS apps in collaboration with large security teams.<br/>
+          • Analyzed obfuscated code; supported bug patching to improve app security and performance.<br/>
+          • Used FRIDA and Objection for dynamic analysis and reverse engineering (ethical use).<br/>
+          • Worked with QA/engineering to strengthen secure coding practices.
         </p>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-title">
-        <h2>Skills</h2>
-        <p>Tech stack and security toolset.</p>
+        <div class="tags"><span class="tag">Mobile Security</span><span class="tag">RE</span><span class="tag">Threat Analysis</span></div>
       </div>
 
-      <div class="grid-3">
-        <div class="item">
-          <h3>Security</h3>
-          <p>VAPT, reconnaissance, incident response, threat modeling, reverse engineering, cryptography.</p>
-          <div class="tags">
-            <span class="tag">Burp Suite</span>
-            <span class="tag">Metasploit</span>
-            <span class="tag">Wireshark</span>
-            <span class="tag">Nmap</span>
-            <span class="tag">OWASP ZAP</span>
-          </div>
-        </div>
-        <div class="item">
-          <h3>Blockchain</h3>
-          <p>Ethereum, Hyperledger, smart contracts, encryption-first design for integrity & confidentiality.</p>
-          <div class="tags">
-            <span class="tag">Solidity</span>
-            <span class="tag">Smart Contracts</span>
-            <span class="tag">Data Integrity</span>
-          </div>
-        </div>
-        <div class="item">
-          <h3>Engineering</h3>
-          <p>Python, Java, Bash, Node.js, Docker/Kubernetes, Git, SQL/NoSQL, Linux.</p>
-          <div class="tags">
-            <span class="tag">Docker</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">Terraform</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-title">
-        <h2>Projects</h2>
-        <p>Security + blockchain work (selected).</p>
+      <div class="item">
+        <h3>Jr. VAPT Auditor — Crypto Forensic Technologies</h3>
+        <p>
+          • Performed reconnaissance, vulnerability scanning, and penetration testing to assess exposure.<br/>
+          • Assisted investigations and cloud infrastructure improvements for enterprise clients.<br/>
+          • Documented findings and delivered remediation-focused reports.
+        </p>
+        <div class="tags"><span class="tag">VAPT</span><span class="tag">Cloud</span><span class="tag">Reporting</span></div>
       </div>
 
-      <div class="grid-2">
-        <div class="item project">
-          <div class="project-top">
-            <div>
-              <h3>Blockchain-Based Exam Paper Transmission</h3>
-              <p>Secure, tamper-resistant exam paper distribution using encryption + blockchain validation.</p>
-            </div>
-            <div class="links">
-              <a href="https://github.com/Atharvagajbe" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/atharva-gajbe-50a2571aa" target="_blank" rel="noreferrer">LinkedIn</a>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">Blockchain</span>
-            <span class="tag">Encryption</span>
-            <span class="tag">Confidentiality</span>
-            <span class="tag">Integrity</span>
-          </div>
-        </div>
-
-        <div class="item project">
-          <div class="project-top">
-            <div>
-              <h3>Scanner-Master</h3>
-              <p>Network scanner that identifies connected devices and displays IP/MAC addresses.</p>
-            </div>
-            <div class="links">
-              <a href="https://github.com/Atharvagajbe" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">Networking</span>
-            <span class="tag">Discovery</span>
-            <span class="tag">Python</span>
-          </div>
-        </div>
-
-        <div class="item project">
-          <div class="project-top">
-            <div>
-              <h3>Server-Side Template Injection (SSTI) Research</h3>
-              <p>Demonstrated SSTI risk and impact in a controlled lab setting; focused on detection + prevention.</p>
-            </div>
-            <div class="links">
-              <a href="https://github.com/Atharvagajbe" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">Web Security</span>
-            <span class="tag">Secure Coding</span>
-            <span class="tag">Threat Modeling</span>
-          </div>
-        </div>
-
-        <div class="item project">
-          <div class="project-top">
-            <div>
-              <h3>Security Tooling (Research Demos)</h3>
-              <p>Built small internal demos for security testing & awareness (lab-only, ethical use).</p>
-            </div>
-            <div class="links">
-              <a href="https://github.com/Atharvagajbe" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">Security Research</span>
-            <span class="tag">Defense</span>
-            <span class="tag">Responsible Use</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-title">
-        <h2>Experience</h2>
-        <p>Focused on outcomes, security impact, and collaboration.</p>
+      <div class="item">
+        <h3>Technical Team Lead — TEDx YCCE</h3>
+        <p>
+          • Led a 100+ member technical team managing setups, streaming, and internal portal security.<br/>
+          • Designed a centralized inventory system for equipment tracking and access management.
+        </p>
+        <div class="tags"><span class="tag">Leadership</span><span class="tag">Systems</span><span class="tag">Ops</span></div>
       </div>
 
-      <div class="timeline">
-        <div class="item role">
-          <div class="role-head">
-            <b>Security Analyst — Cognizant (Google Play Protect)</b>
-            <span>2022 — 2025 · Onsite</span>
-          </div>
-          <p style="margin:10px 0 0;color:var(--muted)">
-            • Identified and helped eliminate malware in Android/iOS applications in collaboration with a 500+ member team.<br/>
-            • Analyzed obfuscated code and supported bug patching to improve app security and performance.<br/>
-            • Used FRIDA and Objection to reverse-engineer APKs and detect suspicious behavior.<br/>
-            • Worked cross-functionally with QA and engineering teams to strengthen secure coding practices.
-          </p>
-        </div>
-
-        <div class="item role">
-          <div class="role-head">
-            <b>Jr. VAPT Auditor — Crypto Forensic Technologies</b>
-            <span>2022 · Security Consulting</span>
-          </div>
-          <p style="margin:10px 0 0;color:var(--muted)">
-            • Assisted cybersecurity investigations and cloud infrastructure improvements for major banking institutions.<br/>
-            • Performed reconnaissance, vulnerability scanning, and penetration testing to assess exposure.<br/>
-            • Documented findings and delivered remediation-focused reports.
-          </p>
-        </div>
-
-        <div class="item role">
-          <div class="role-head">
-            <b>Technical Team Lead — TEDx YCCE</b>
-            <span>2022 · Event Technology</span>
-          </div>
-          <p style="margin:10px 0 0;color:var(--muted)">
-            • Led a 100+ member technical team managing software setups, live streaming, and internal portal security.<br/>
-            • Designed a centralized inventory system for equipment tracking and access management.<br/>
-            • Oversaw digital ticketing and participant login system development for smooth registration flow.
-          </p>
-        </div>
-
-        <div class="item role">
-          <div class="role-head">
-            <b>Business Development Manager — Motorodi</b>
-            <span>2019 · Web Solutions</span>
-          </div>
-          <p style="margin:10px 0 0;color:var(--muted)">
-            • Managed frontend infrastructure and server data flow for customer-facing web solutions.<br/>
-            • Built 25+ B2B relationships through outreach and partnership development.<br/>
-            • Conducted market analysis to identify local growth opportunities.
-          </p>
-        </div>
+      <div class="item">
+        <h3>Business Development Manager — Motorodi</h3>
+        <p>
+          • Managed frontend infrastructure and server data flow for customer-facing web solutions.<br/>
+          • Built 25+ B2B relationships through outreach and partnership development.
+        </p>
+        <div class="tags"><span class="tag">Web</span><span class="tag">B2B</span><span class="tag">Delivery</span></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- EDUCATION (extra section) -->
-    <section id="education">
-      <div class="section-title">
-        <h2>Education</h2>
-        <p>Academic foundation and current studies.</p>
-      </div>
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Reach out for cybersecurity / blockchain / secure systems work</p>
+    </div>
 
-      <div class="grid-2">
-        <div class="item">
-          <h3>M.Sc. Applied Computer Science</h3>
-          <p>SRH University Heidelberg, Germany — <span style="color:var(--muted)">2025–Present</span></p>
-          <div class="tags"><span class="tag">Secure Systems</span><span class="tag">Applied CS</span></div>
-        </div>
-        <div class="item">
-          <h3>B.Tech Computer Technology</h3>
-          <p>Yeshwantrao Chavan College of Engineering, Nagpur, India — <span style="color:var(--muted)">2018–2022</span></p>
-          <div class="tags"><span class="tag">Computer Science</span><span class="tag">Engineering</span></div>
-        </div>
-      </div>
-    </section>
+    <div class="grid-2">
+      <a class="item" href="mailto:gajbeatharva2000@gmail.com">
+        <h3>Email</h3>
+        <p>gajbeatharva2000@gmail.com</p>
+      </a>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Reach out for security, blockchain, or secure systems work.</p>
-      </div>
+      <a class="item" href="tel:+491622879983">
+        <h3>Phone</h3>
+        <p>+49 162 2879983</p>
+      </a>
 
-      <div class="contact">
-        <a class="big" href="mailto:gajbeatharva2000@gmail.com">
-          <b>Email</b>
-          <span>gajbeatharva2000@gmail.com</span>
-        </a>
-        <a class="big" href="tel:+491622879983">
-          <b>Phone</b>
-          <span>+49 162 2879983</span>
-        </a>
-        <a class="big" href="https://www.linkedin.com/in/atharva-gajbe-50a2571aa" target="_blank" rel="noreferrer">
-          <b>LinkedIn</b>
-          <span>linkedin.com/in/atharva-gajbe-50a2571aa</span>
-        </a>
-        <a class="big" href="https://github.com/Atharvagajbe" target="_blank" rel="noreferrer">
-          <b>GitHub</b>
-          <span>github.com/Atharvagajbe</span>
-        </a>
-        <a class="big" href="./Atharva_resume.pdf" target="_blank" rel="noreferrer">
-          <b>Résumé</b>
-          <span>Atharva_resume.pdf</span>
-        </a>
-        <a class="big" href="#" onclick="navigator.clipboard.writeText('English (Fluent) • German (Conversational) • Marathi/Hindi/Sanskrit (Native)'); return false;">
-          <b>Languages</b>
-          <span>Click to copy</span>
-        </a>
-      </div>
-    </section>
+      <a class="item" href="https://www.linkedin.com/in/atharva-gajbe-50a2571aa" target="_blank" rel="noreferrer">
+        <h3>LinkedIn</h3>
+        <p>linkedin.com/in/atharva-gajbe-50a2571aa</p>
+      </a>
 
-    <footer>
-      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center; border-top:1px solid var(--border); padding-top:16px">
-        <span>© <span id="year"></span> Atharva Devendra Gajbe. Built with HTML/CSS/JS.</span>
-        <a class="btn" href="#top">Back to top ↑</a>
-      </div>
-    </footer>
-  </main>
+      <a class="item" href="https://github.com/Atharvagajbe" target="_blank" rel="noreferrer">
+        <h3>GitHub</h3>
+        <p>github.com/Atharvagajbe</p>
+      </a>
+    </div>
+  </section>
 
-  <script>
-    // Theme toggle (persists)
-    const root = document.documentElement;
-    const btn = document.getElementById("themeBtn");
-    const saved = localStorage.getItem("theme");
-    if (saved) root.setAttribute("data-theme", saved);
+  <footer>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
+      <span>© <span id="year"></span> Atharva Devendra Gajbe.</span>
+      <a class="btn" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
 
-    function syncIcon(){
-      const isLight = root.getAttribute("data-theme") === "light";
-      btn.textContent = isLight ? "☀️" : "🌙";
-    }
-    syncIcon();
+</main>
 
-    btn.addEventListener("click", () => {
-      const current = root.getAttribute("data-theme");
-      const next = current === "light" ? "dark" : "light";
-      if (next === "dark") root.removeAttribute("data-theme");
-      else root.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", next);
-      syncIcon();
+<a href="#top" class="btn backTop" aria-label="Back to top">↑</a>
+
+<script>
+  // Theme toggle
+  const root = document.documentElement;
+  const themeBtn = document.getElementById("themeBtn");
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") root.setAttribute("data-theme","light");
+  themeBtn.textContent = root.getAttribute("data-theme")==="light" ? "☀️" : "🌙";
+
+  themeBtn.addEventListener("click", () => {
+    const isLight = root.getAttribute("data-theme")==="light";
+    if (isLight) root.removeAttribute("data-theme");
+    else root.setAttribute("data-theme","light");
+    localStorage.setItem("theme", isLight ? "dark" : "light");
+    themeBtn.textContent = isLight ? "🌙" : "☀️";
+  });
+
+  // Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const toggle = document.querySelector(".navToggle");
+  const links = document.querySelector("[data-nav-links]");
+  if (toggle && links) {
+    toggle.addEventListener("click", () => {
+      const open = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
     });
+    links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      links.classList.remove("open");
+      toggle.setAttribute("aria-expanded","false");
+    }));
+  }
 
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => e.isIntersecting && e.target.classList.add("in"));
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  // Back to top button
+  const topBtn = document.querySelector(".backTop");
+  window.addEventListener("scroll", () => {
+    topBtn.classList.toggle("show", window.scrollY > 600);
+  });
+
+  // Active nav link
+  const sectionIds = ["projects","experience","contact"];
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  function setActive(){
+    const y = window.scrollY + 140;
+    let current = null;
+    for (const s of sections) if (s.offsetTop <= y) current = s;
+    document.querySelectorAll(".nav-links a").forEach(a => a.classList.remove("active"));
+    if (current){
+      const a = document.querySelector(`.nav-links a[href="#${current.id}"]`);
+      if (a) a.classList.add("active");
+    }
+  }
+  window.addEventListener("scroll", setActive, { passive:true });
+  setActive();
+</script>
 </body>
 </html>
